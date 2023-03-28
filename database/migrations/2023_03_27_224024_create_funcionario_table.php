@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('funcionario', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('email');
+            $table->string('emailfun');
             $table->string('nomefun');
-            $table->string('senha');
-            $table->string('whatsapp');
-            $table->string('cpf');
+            $table->string('senhafun');
+            $table->string('whatsappfun');
+            $table->string('cpffun');
         });
     }
 
