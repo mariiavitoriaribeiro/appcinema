@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Funcionario extends Model
 {
     use HasFactory;
-    protected $fillable = ['emailfun','nomefun','senhafun,whatsappfun','cpffun'];
+    protected $fillable = ['emailfun','nomefun','senhafun', 'whatsappfun','cpffun'];
 }

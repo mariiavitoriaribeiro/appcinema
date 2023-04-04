@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use  Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\cadastrofilmeModel;
 
@@ -14,15 +14,15 @@ class cadastroFilme extends Controller
         return View('cadastroFilme');
     }
     public function cadastrarFilme(Request $request){
-        $dadosFilme = $request->validade([
+        $dadosFilme = $request->validate([
     'filme' =>'string|required', 
     'atores'=>'string|required',
-    'dataLancamento'=>'string|requoired', 
+    'datalancamento'=>'date|requoired', 
     'sinopse'=>'string|required', 
-    'capa'=>'string|required']);
+    ]);
 
-    cadastroFilmeModel::create ($dadosFilme);
-    return Redirect::route ('/home');
+    Filme::create ($dadosFilme);
+    return Redirect::route ('/cadastro-filme');
     }
 
 }

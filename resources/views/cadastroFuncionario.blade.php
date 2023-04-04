@@ -2,10 +2,11 @@
 
 @section('content')
 
-<form method ="post" action ="{{route ('salvar-funcionarios')}}">
+<form method ="post" action ="{{route ('cadastro-funcionario')}}">
+    @csrf
             <div class="mb-3 form-check">
                 <label for="nomeInput" class="form-label">Nome:</label>
-                <input type="text" name="namefun" class="form-control" id="nomeInput" >
+                <input type="text" name="nomefun" class="form-control" id="nomeInput" >
             </div>
             <div class="mb-3 form-check">
                 <label for="emailInput" class="form-label">E-mail:</label>
@@ -13,7 +14,7 @@
             </div>
             <div class="mb-3 form-check">
                 <label for="whatsappInput" class="form-label">WhatsApp:</label>
-                <input type="text" name="whatssappfun" class="form-control" id="whatsappInput" >
+                <input type="text" name="whatsappfun" class="form-control" id="whatsappInput" >
             </div>
             <div class="mb-3 form-check">
                 <label for="cpfInput" class="form-label">CPF:</label>
