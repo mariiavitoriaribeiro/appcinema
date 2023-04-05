@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('filme');
             $table->longText('sinopse');
             $table->date('dataLancamento');
-       
         });
     }
 
