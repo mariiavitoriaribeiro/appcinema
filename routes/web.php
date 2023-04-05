@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cadastroFilme;
 use App\Http\Controllers\cadastroFuncionario;
 use App\Http\Controllers\cadastroSala;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,14 +21,12 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/cadastro-filme',[cadastroFilme::class,'buscaCadastroFilme'])->name('cadastro-filme');
 
-Route::get('/cadastro-filme',[cadastroFilme::class,'buscaCadastroFilme']);
+Route::get('/cadastro-funcionario',[cadastroFuncionario::class,'buscaCadastroFuncionario']);
 
-Route::get('/cadastro-funcionario',[cadastroFuncionario::class,'buscaCadastroFuncionario'])->name('buscaCadastroFuncionario');
-
-Route::post('/cadastro-funcionario',[cadastroFuncionario::class,'cadastrarFuncionario'])->name('cadastro-funcionario');
 Route::get('/cadastro-sala',[cadastroSala::class,'buscaCadastroSala']);
 
-Route::get('/cadastro-filme',[cadastroFilme::class,'buscaCadastroFilme'])->name('buscaCadastroFilme');
-Route::post('/cadastro-filme',[cadastroFilme::class,'cadastroFilme'])->name('cadastro-filme');
+Route::post('/cadastro-funcionario',[cadastroFuncionario::class, 'cadastrarFuncionario'])->name('cadastro-funcionario'); 
 
+Route::post('/cadastro-filme',[cadastroFilme::class, 'cadastrarFilme'])->name('cadastro-filme'); 

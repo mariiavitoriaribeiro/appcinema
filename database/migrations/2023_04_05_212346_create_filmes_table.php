@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('filmes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('filme');
-            $table->longText('sinopse');
-            $table->date('dataLancamento');
+            $table->string('nomefilme');
+            $table->string('atoresfilme');
+            $table->date('dtlancamentofilme');
+            $table->longText('sinopsefilme');
         });
     }
 
