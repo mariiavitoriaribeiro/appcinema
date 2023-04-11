@@ -10,6 +10,6 @@ class Filme extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nomefilme', 'atoresfilme', 'dtlancamentofilme', 'sinopsefilme' 
+        'nomefilme', 'atoresfilme', 'dtlancamentofilme', 'sinopsefilme', 'capa' 
     ];
 }

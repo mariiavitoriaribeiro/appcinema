@@ -1,9 +1,8 @@
 @extends('padrao')
 
 @section('content') 
-
-  <form method = "post" action="{{route('cadastro-filme')}}">
-
+<form enctype = "multipart/form-data" method="post" action="{{route('cadastro-filme')}}">
+ 
     @csrf 
     
     <div class="mb-3 form-check">
@@ -22,6 +21,12 @@
       <label for="sinopseInput" class="form-label">Sinopse:</label>
       <textarea class="form-control" name="sinopsefilme" id="sinopseInput" rows="3"></textarea>
     </div>
+    
+    <div class="mb-3 form-check">
+      <label for="capaInput" class="form-label">Capa:</label>
+      <input class="form-control"  name="capa"  type="file" id="capaInput">
+    </div>
+
     <button type="submit" class="btn btn-primary">Salvar</button>
   </form>
 
