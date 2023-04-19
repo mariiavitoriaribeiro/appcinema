@@ -36,7 +36,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{url('/cadastro-funcionario')}}">Cadastrar</a></li>
                     <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-                    <li><a class="dropdown-item" href="#">Gerenciar</a></li>
+                    <li><a class="dropdown-item" href="{{url('/gerenciador-funcionario')}}">Gerenciar</a></li>
                 </ul>
               </li>
 

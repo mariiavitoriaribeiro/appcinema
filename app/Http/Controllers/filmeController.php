@@ -7,7 +7,7 @@ use App\Models\Filme;
 use Illuminate\Support\Facades\Redirect; 
 
 
-class cadastroFilme extends Controller
+class filmeController extends Controller
 {
     public function buscaCadastroFilme(){
 

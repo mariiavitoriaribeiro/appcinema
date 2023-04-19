@@ -5,7 +5,7 @@ use  Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\Funcionario;
 
-class cadastroFuncionario extends Controller
+class funcionarioController extends Controller
 {
     public function buscaCadastroFuncionario(){
         return View('cadastroFuncionario');
@@ -24,4 +24,23 @@ class cadastroFuncionario extends Controller
         Funcionario::create($dadosfuncionarios);
         return Redirect::route('cadastro-funcionario');
      }
+     
+    public function buscarFuncionario() {
+        return view('gerenciadorFuncionario'); 
+    }
+
+    public function MostrarGerenciadorFuncionario(Request $request){
+        $dadosFuncionarios = Funcionario::all(); 
+        dd(dadosfuncionarios);
+
+        /*
+        
+        $dadosfuncionarios = Funcionario::query(); 
+        $dadosfuncionarios->when($request->nomefun, function($query, $nomefuncionario){
+            $query->where('nomefun', 'like', '%'.$nomefuncionario.'%');
+        });
+        $dadosFuncionarios = $dadosFuncionarios->get(); 
+        return view('gerenciadorFuncionario');
+        */ 
+    }
 }
