@@ -12,7 +12,7 @@ class funcionarioController extends Controller
     }
     public function cadastrarFuncionario(Request $request)
     {
-        $dadosfuncionarios = $request->validate(
+        $dadosFuncionario = $request->validate(
         [
         'emailfun'=>'string|required',
         'nomefun'=>'string|required',
@@ -21,26 +21,28 @@ class funcionarioController extends Controller
         'cpffun'=>'string|required'
         ]
     );
-        Funcionario::create($dadosfuncionarios);
+        Funcionario::create($dadosFuncionario);
         return Redirect::route('cadastro-funcionario');
      }
      
+     
     public function buscarFuncionario() {
-        return view('gerenciadorFuncionario'); 
+        return view('gerenciadorFuncionario', ['dadosfuncionario']); 
     }
-
+     
     public function MostrarGerenciadorFuncionario(Request $request){
-        $dadosFuncionarios = Funcionario::all(); 
-        dd(dadosfuncionarios);
-
-        /*
+        $dadosFuncionario = Funcionario::all(); 
+        //dd($dadosfuncionarios);
         
-        $dadosfuncionarios = Funcionario::query(); 
-        $dadosfuncionarios->when($request->nomefun, function($query, $nomefuncionario){
+        
+        $dadosFuncionario = Funcionario::query(); 
+        $dadosFuncionario->when($request->nomefun, function($query, $nomefuncionario){
             $query->where('nomefun', 'like', '%'.$nomefuncionario.'%');
         });
-        $dadosFuncionarios = $dadosFuncionarios->get(); 
-        return view('gerenciadorFuncionario');
-        */ 
+        $dadosFuncionario = $dadosFuncionario ->get(); 
+           
+
+        return view('gerenciadorFuncionario',['dadosfuncionario'=>$dadosFuncionario]);
+      
     }
 }
