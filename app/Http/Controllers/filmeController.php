@@ -33,7 +33,7 @@ class filmeController extends Controller
         
         Filme::create($dadosFilme); 
 
-        //return Redirect::route('cadastro-filme');
+        return Redirect::route('cadastro-filme');
 
     }
 }
