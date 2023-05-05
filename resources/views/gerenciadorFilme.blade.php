@@ -4,11 +4,11 @@
 
 <div class="container mt-5">
 
-<form method="get" action="{{route('gerenciar-funcionario')}}">
+<form method="get" action="{{route('gerenciar-filme')}}">
   <div class="mb-3 row">
     <label for="inputPesquisar" class="col-sm-2 col-form-label">Pesquisar:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="nomefun" id="inputPesquisar" placeholder="Digite o nome do funcionário" >
+      <input type="text" class="form-control" name="nomefilme" id="inputPesquisar" placeholder="Digite o nome do filme" >
     </div>
     <div class="col-sm-2"> <button type="submit" class="btn btn-outline-primary">Pesquisar</button> </div>
   </div>
@@ -19,22 +19,22 @@
   <thead>
     <tr>
       <td>Codígo</td>
-      <td>Nome</td>
-      <td>Senha</td>
-      <td>Email</td>
-      <td>Whatsapp</td>
+      <td>Nome filme</td>
+      <td>Atores Filme  </td>
+      <td>Alterar</td>
+      <td>Excluir</td>
     </tr>
   </thead>
   <tbody>
-    @if(empty($_GET['nomefun']))
+    @if(empty($_GET['nomefilme']))
     @else
-    @foreach($dadosfuncionario as $dadosfuncionarios)
+    @foreach($dadosfilme as $dadosfilme)
     
     <tr>
-      <th scope="row">{{$dadosfuncionarios->id}}</th>
-      <td>{{$dadosfuncionarios->nomefun}}</td>
-      <td>{{$dadosfuncionarios->emailfun}}</td>
-      <td><a href="{{route('mostrar-funcionario',$dadosfuncionarios->id)}}">Alterar</a></td>
+      <th scope="row">{{$dadosfilme->id}}</th>
+      <td>{{$dadosfilme->nomefilme}}</td>
+      <td>{{$dadosfilme->atoresfilme}}</td>
+      <td><a href="{{route('mostrar-filme',$dadosfilme->id)}}">Alterar</a></td>
       <td>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
 Excluir
@@ -55,7 +55,7 @@ Excluir
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        <form method="post" action="{{route('apagar-funcionario',$dadosfuncionarios->id)}}">
+        <form method="post" action="{{route('apagar-filme',$dadosfilme->id)}}">
         @method('delete')
         @csrf 
         <button type="submit" class=" btn btn-danger">Excluir</button>
@@ -64,6 +64,7 @@ Excluir
     </div>
   </div>
 </div>
+
 
    @endforeach
   </tbody>
