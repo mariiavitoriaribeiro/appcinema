@@ -33,5 +33,5 @@ Route::put('/garenciar-funcionario/{registrosFuncionarios}',[funcionarioControll
 
 Route::get('/gerenciar-filme',[filmeController::class,'MostrarGerenciadorFilme'])->name('gerenciar-filme');
 Route::delete('/gerenciar-filme/{registrosFilme}',[filmeController::class, 'ApagarFilme'])->name('apagar-filme');
-Route::get('/alterar-filme/{registrosFilme}',[filmeController::class,'MostrarRegistrosFilme'])->name('mostrar-filme');
+Route::get('/alterar-filme/{registrosFilme}',[filmeController::class,'MostrarRegistroFilme'])->name('mostrar-filme');
 Route::put('/gerenciar-filme/{registrosFilme}',[filmeController::class,'AlterarBancoFilme'])->name('alterar-banco-filme');

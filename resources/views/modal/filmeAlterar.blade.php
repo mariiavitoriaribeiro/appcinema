@@ -34,10 +34,9 @@
             </div>
 
             <div class="mb-3 form-check">
-                <label for="capaInput" class="form-label">Capa:</label>
-                <input type="text" name="capa"class="form-control" id="capaInput">
-            </div>
-
+      <label for="capaInput" class="form-label">Capa:</label>
+      <input class="form-control"  name="capa"  type="file" id="capaInput">
+    </div>
 
             <button type="submit" class="btn btn-primary">Salvar</button>
         </form>

@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-dark">
-      <form method = "post" action="{{route('alterar-banco-funcionario',$dadosfuncionarios->id )}}">
+      <form method = "post" action="{{route('alterar-banco-funcionario',$dadosfuncionarios->id )}}" enctype = "multipart/form-data">>
       @method('PUT')
       @csrf
             <div class="mb-3 form-check">
