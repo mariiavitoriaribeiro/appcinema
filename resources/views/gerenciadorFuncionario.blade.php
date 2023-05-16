@@ -30,7 +30,7 @@
       <td>{{$dadosfuncionarios->emailfun}}</td>
       <td>
         
-      <a href="{{route('mostrar-funcionario',$dadosfuncionarios->id)}}">Alterar</a>
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalAlterarFun-{{$dadosfuncionarios->id}}">
           Alterar

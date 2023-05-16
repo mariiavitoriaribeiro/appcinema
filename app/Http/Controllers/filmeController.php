@@ -21,13 +21,10 @@ class filmeController extends Controller
             'dtlancamentofilme' => 'string|required',
             'sinopsefilme' => 'string|required',
             'capa' => 'file|required',
-           
         ]);
 
 
-       
-
-
+    
         $file=$dadosFilme['capa'];
         $path =$file ->store ('capaf', 'public');
         $dadosFilme['capa']=$path;
@@ -67,17 +64,20 @@ class filmeController extends Controller
         return view('xxx',['registrosFilme'=>$registrosFilme]);
     }
 
-    public function AlterarBancoFilme(Filme $registrosFilme){
-        $dadosfilme =$request->validate([
+    
+    public function AlterarBancoFilme(Filme $registrosFilme, Request $request){
+        $dadosfilme = $request->validate([
             'nomefilme' => 'string|required',
             'atoresfilme'=> 'string|required',
             'dtlancamentofilme' => 'string|required',
             'sinopsefilme' => 'string|required',
             'capa' => 'file|required',
-        ]);
-        $registrosFilme->fill($dadosfilme);
+
+        ]);        
+
+        $registrosFilme->fill($dadosfilme); 
         $registrosFilme->save();
-   
-       return Redirect::route('gerenciar-filme');
-       }
+        return Redirect::route('gerenciar-filme');    
+
+        }
 }
