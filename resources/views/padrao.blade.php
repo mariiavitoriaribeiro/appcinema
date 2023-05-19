@@ -41,11 +41,10 @@
               </li>
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Sala/Poltrona</a>
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Poltrona</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{url('/cadastro-sala')}}">Cadastrar</a></li>
-                    <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-                    <li><a class="dropdown-item" href="#">Gerenciar</a></li>
+                    <li><a class="dropdown-item" href="{{url('/cadastro-poltrona')}}">Cadastrar</a></li>
+                    <li><a class="dropdown-item" href="{{url('/gerenciar-poltrona')}}">Gerenciar</a></li>
                 </ul>
               </li>
             </ul>
