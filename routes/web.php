@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/i', function () {
+    return view('index');
+});
+
 Route::get('/cadastro-filme',[filmeController::class,'buscaCadastroFilme'])->name('cadastro-filme');
 Route::post('/cadastro-filme',[filmeController::class, 'cadastrarFilme'])->name('cadastro-filme'); 
 Route::get('/cadastro-funcionario',[funcionarioController::class,'buscaCadastroFuncionario']);
