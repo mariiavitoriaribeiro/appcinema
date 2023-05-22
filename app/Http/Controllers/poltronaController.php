@@ -34,8 +34,8 @@ class poltronaController extends Controller
        // dd($dadosfuncionarios);
 
         $dadospoltronas = Poltrona::query();
-        $dadospoltronas->when($request->clie,function($query,$nomecliente ){
-            $query->where('nomeclie','like','%'.$nomecliente.'%');
+        $dadospoltronas->when($request->nomeclie, function($query,$nomeclie ){
+            $query->where('nomeclie','like', '%'.$nomeclie.'%');
         }); 
 
         $dadospoltronas = $dadospoltronas->get();
@@ -57,6 +57,7 @@ class poltronaController extends Controller
         public function MostrarRegistrosPoltrona(Poltrona $registrosPoltronas){
             return view('xxxx',['registrosPoltronas'=>$registrosPoltronas]);
     
+            
         }
 
 

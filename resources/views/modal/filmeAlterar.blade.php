@@ -20,17 +20,17 @@
 
             <div class="mb-3 form-check">
                 <label for="AtorInput" class="form-label">Atores:</label>
-                <input type="text" name="atoresfilme" class="form-control" id="atorInput">
+                <input type="text" name="atoresfilme" value="{{$dadosfilme->atoresfilme}}" class="form-control" id="atorInput">
             </div>
 
             <div class="mb-3 form-check">
                 <label for="datalancamentoInput" class="form-label">Data lançamento:</label>
-                <input type="date" name="dtlancamentofilme"class="form-control" id="datalancamentoInput" >
+                <input type="date" name="dtlancamentofilme" value="{{$dadosfilme->dtlancamentofilme}}"class="form-control" id="datalancamentoInput" >
             </div>
 
             <div class="mb-3 form-check">
                 <label for="sinopseInput" class="form-label">Sinopse:</label>
-                <input type="text" name="sinopsefilme" class="form-control" id="sinopseInput">
+                <input type="text" name="sinopsefilme" value="{{$dadosfilme->sinopsefilme}}" class="form-control" id="sinopseInput">
             </div>
 
             <div class="mb-3 form-check">
