@@ -18,13 +18,11 @@ use App\Http\Controllers\poltronaController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/a', function () {
     return view('home');
 });
 
-Route::get('/i', function () {
-    return view('index');
-});
+Route::get('/',[filmeController::class,'mostrarFilme'])->name('index');
 
 Route::get('/cadastro-filme',[filmeController::class,'buscaCadastroFilme'])->name('cadastro-filme');
 Route::post('/cadastro-filme',[filmeController::class, 'cadastrarFilme'])->name('cadastro-filme'); 

@@ -50,6 +50,7 @@
                                 <li class="active"><a href="./index.html">Homepage</a></li>
                                 <li><a href="./signup.html">Cadastre-se</a></li>
                                 <li><a href="./login.html">Login</a></li>
+                                <li><a href="{{url('/a')}}">administração</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -128,88 +129,22 @@
                             </div>
                         </div>
                         <div class="row">
+                        @foreach($dadosfilme as $dadofilme)
+                        @if(empty($dadofilme))
+
+                        @else
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/ava.jpg">
-                                        <div class="ep">7 / 10</div>
+                                    <div class="product__item__pic set-bg" data-setbg="{{ asset('storage/app/public/$dadofilme->capa') }}">
                                     </div>
                                     <div class="product__item__text">
-                                        <ul>
-                                            <li>aventura</li>
-                                            <li>drama</li>
-                                            <li>ficção científica </li>
-                                        </ul>
-                                        <h5><a href="avatar-details.html">Avatar: O Caminho da Água</a></h5>
+
+                                        <h5><a href="avatar-details.html">{{$dadofilme->nomefilme}}</a></h5>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/hf.jpg">
-                                        <div class="ep">6 / 10</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Acão</li>
-                                            <li>Ficcção cientifica</li>
-                                        </ul>
-                                        <h5><a href="homemformiga-details.html">Homem Formiga & Vespa Quantumania</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/gato-de-botas-2-o-ultimo-pedido.jpg">
-                                        <div class="ep">10 / 10</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Acão</li>
-                                            <li>Animação</li>
-                                        </ul>
-                                        <h5><a href="gato-details.html">Gato de botas 2 o ultimo pedido</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/Megan.jpg">                                      <div class="ep">7 / 10</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Terror</li>
-                                        </ul>
-                                        <h5><a href="megan-details.html">M3GAN</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/abaleia.jpg">
-                                        <div class="ep">8 / 10</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Drama</li>
-                                        </ul>
-                                        <h5><a href="baleia-details.html">A Baleia</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/13.jpg">
-                                        <div class="ep">7 / 10</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Terror</li>
-                                            <li>Sobrenatural</li>
-                                        </ul>
-                                        <h5><a href="13-details .html">13 Exorcismos</a></h5>
-                                    </div>
-                                </div>
-                            </div>
+                        @endif
+                        @endforeach
                         </div>
                     </div>
                     

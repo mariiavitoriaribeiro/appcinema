@@ -26,8 +26,8 @@
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Filme</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{{url('/cadastro-filme')}}">Cadastrar</a></li>
-                  <li><a class="dropdown-item" href="{{url('/i')}}">i</a></li>
                    <li><a class="dropdown-item" href="{{'/gerenciar-filme'}}">Gerenciar</a></li>
+
                 </ul>
               </li>
 
