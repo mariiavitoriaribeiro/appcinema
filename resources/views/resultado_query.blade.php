@@ -15,14 +15,14 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -71,8 +71,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <span>Avatar: O Caminho da Água</span>
+                        <a href="/"><i class="fa fa-home"></i> Home</a>
+                        <span>{{$resultado->nomefilme}}</span>
                     </div>
                 </div>
             </div>
@@ -86,37 +86,36 @@
             <div class="anime__details__content">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="anime__details__pic set-bg" data-setbg="img/trending/ava.jpg">
+                        <div class="anime__details__pic set-bg" data-setbg="/{{$resultado->capa}}">
                         </div>
                     </div>
                     <div class="col-lg-9">
                         <div class="anime__details__text">
                             <div class="anime__details__title">
-                                <h3>Avatar: O Caminho da Água</h3>
-                                <span>Avatar:The Way of Water</span>
+                                <h3>{{$resultado->nomefilme}}</h3>
                             </div>
-                            <p>Após formar uma família, Jake Sully e Ney'tiri fazem de tudo para ficarem juntos. No entanto, eles devem sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve travar uma guerra difícil contra os humanos.</p>
+                            <p>{{$resultado->sinopsefilme}}</p>
                             <div class="anime__details__widget">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>Estudio:</span>lightstorm entertainment</li>
-                                            <li><span>Data de estreia:</span>15 de dezembro de 2022</li>
-                                            <li><span>Genero:</span>Ficção científica, Aventura, Fantasia, Ação</li>
+                                            <li><span>Estudio:</span>{{$resultado->distribuidorafilme}}</li>
+                                            <li><span>Data de estreia:</span>{{$resultado->dtlancamentofilme}}</li>
+                                            <li><span>Genero:</span>{{$resultado->generofilme}}</li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>Notas:</span>7 / 10</li>
-                                            <li><span>Duração:</span>3h 12min</li>
-                                            <li><span>Direção:</span>James Cameron</li>
-                                            <li><span>Elenco:</span> Sam Worthington, Zoe Saldana, Sigourney Weaver</li>
+                                            <li><span>Notas:</span>{{$resultado->notafilme}} / 10</li>
+                                            <li><span>Duração:</span>{{$resultado->duracaofilme}}</li>
+                                            <li><span>Direção:</span>{{$resultado->diretorfilme}}</li>
+                                            <li><span>Elenco:</span>{{$resultado->atoresfilme}}</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="anime__details__btn">
-                                <a href="SeatsAvatar.html" class="watch-btn"><span>Compre seu ingresso</span> 
+                                <a href="{{route('cadastro-poltrona')}}" class="watch-btn"><span>Compre seu ingresso</span> 
                                     <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
@@ -126,8 +125,6 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-8">
 
- 
- 
                 </div>
             </div>
         </section>
@@ -174,14 +171,14 @@
         <!-- Search model end -->
 
         <!-- Js Plugins -->
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/player.js"></script>
-        <script src="js/jquery.nice-select.min.js"></script>
-        <script src="js/mixitup.min.js"></script>
-        <script src="js/jquery.slicknav.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/jquery-3.3.1.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/player.js"></script>
+        <script src="/js/jquery.nice-select.min.js"></script>
+        <script src="/js/mixitup.min.js"></script>
+        <script src="/js/jquery.slicknav.js"></script>
+        <script src="/js/owl.carousel.min.js"></script>
+        <script src="/js/main.js"></script>
 
     </body>
 

@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\filmeController;
 use App\Http\Controllers\funcionarioController;
 use App\Http\Controllers\cadastroSala;
-
-
+use App\Http\Controllers\poltronaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +22,9 @@ Route::get('/a', function () {
 });
 
 Route::get('/',[filmeController::class,'mostrarFilme'])->name('index');
+
+Route::post('/executar_query',[filmeController::class,'executarQuery'])->name('executar_query');
+Route::get('/resultado_query/{nomefilme}',[filmeController::class,'resultadoQuery'])->name('resultado_query');
 
 Route::get('/cadastro-filme',[filmeController::class,'buscaCadastroFilme'])->name('cadastro-filme');
 Route::post('/cadastro-filme',[filmeController::class, 'cadastrarFilme'])->name('cadastro-filme'); 

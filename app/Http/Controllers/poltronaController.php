@@ -73,13 +73,7 @@ class poltronaController extends Controller
 
         //Isso terá que ser arrumado depois, quando criar uma route no web.
         return Redirect::route('gerenciar-poltrona');
-
-
 }
-
-
-
-
 
 }
 ?>

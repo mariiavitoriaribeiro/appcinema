@@ -89,4 +89,20 @@ class filmeController extends Controller
             return view('index',['dadosfilme'=>$dadosfilme]);
             
         }
+
+        public function executarQuery(Request $request)
+        {
+            $nomefilme = $request->input('nomefilme');
+            // Executar a query com base no nomefilme
+            
+            return redirect()->route('resultado_query', ['nomefilme' => $nomefilme]);
+        }
+
+        public function resultadoQuery($nomefilme)
+        {
+            // Realizar a query com base no $nomefilme e obter o resultado
+            $resultado = Filme::where('nomefilme', $nomefilme)->first();
+            
+            return view('resultado_query', ['resultado' => $resultado]);
+        }       
 }

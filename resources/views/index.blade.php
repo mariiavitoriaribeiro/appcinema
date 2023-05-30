@@ -57,7 +57,6 @@
                 </div>
                 <div class="col-lg-2">
                     <div class="header__right">
-                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
                         <a href="./login.html"><span class="icon_profile"></span></a>
                     </div>
                 </div>
@@ -79,7 +78,11 @@
                                 <div class="label">{{$dadofilme->generofilme}}</div>
                                 <h2>{{$dadofilme->nomefilme}}</h2>
                                 <p>{{$dadofilme->sinopsefilme}}</p>
-                                <a href="link a definir"><span>Assista agora</span> <i class="fa fa-angle-right"></i></a>
+                                <a href="{{ route('resultado_query', ['nomefilme' => $dadofilme->nomefilme]) }}"><span>Assista agora</span> <i class="fa fa-angle-right"></i></a>
+                                        <form method="POST" action="{{ route('executar_query') }}">
+                                            @csrf
+                                            <input type="hidden" name="nomefilme" value="{{$dadofilme->nomefilme}}">
+                                        </form>
                             </div>
                         </div>
                     </div>
@@ -109,7 +112,6 @@
                         <div class="row">
                         @foreach($dadosfilme as $dadofilme)
                         @if(empty($dadofilme))
-
                         @else
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
@@ -120,7 +122,11 @@
                                         <ul>
                                             <li>{{$dadofilme->generofilme}}</li>
                                         </ul>
-                                        <h5><a href="avatar-details.html">{{$dadofilme->nomefilme}}</a></h5>
+                                        <h5><a href="{{ route('resultado_query', ['nomefilme' => $dadofilme->nomefilme]) }}">{{$dadofilme->nomefilme}}</a></h5>
+                                        <form method="POST" action="{{ route('executar_query') }}">
+                                            @csrf
+                                            <input type="hidden" name="nomefilme" value="{{$dadofilme->nomefilme}}">
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -143,10 +149,13 @@
                                 <div class="product__sidebar__view__item set-bg mix day years"
                                 data-setbg="{{$dadofilme->capa}}">
                                 <div class="ep">{{$dadofilme->notafilme}} / 10</div>
-                                <h5><a href="avatar-details.html">{{$dadofilme->nomefilme}}</a></h5>
+                                <h5><a href="{{ route('resultado_query', ['nomefilme' => $dadofilme->nomefilme]) }}">{{$dadofilme->nomefilme}}</a></h5>
+                                        <form method="POST" action="{{ route('executar_query') }}">
+                                            @csrf
+                                            <input type="hidden" name="nomefilme" value="{{$dadofilme->nomefilme}}">
+                                        </form>
                             </div>
-                            @endforeach
-                            
+                            @endforeach  
                 </div>
             </div>
         </div>
@@ -191,16 +200,6 @@
   </footer>
   <!-- Footer Section End -->
 
-  <!-- Search model Begin -->
-  <div class="search-model">
-    <div class="h-100 d-flex align-items-center justify-content-center">
-        <div class="search-close-switch"><i class="icon_close"></i></div>
-        <form class="search-model-form">
-            <input type="text" id="search-input" placeholder="Search here.....">
-        </form>
-    </div>
-</div>
-<!-- Search model end -->
 
 <!-- Js Plugins -->
 <script src="/js/jquery-3.3.1.min.js"></script>
