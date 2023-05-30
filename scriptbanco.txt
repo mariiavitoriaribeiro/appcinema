@@ -1,0 +1,9 @@
+use appcinemabd;
+
+select * from filmes;
+
+delete from filmes where id  =1 ;
+
+insert into filmes values (null,null,null,'Avatar: O Caminho da Água','Ficção científica','7','Sam Worthington, Zoe Saldana, Sigourney Weaver','James Cameron','lightstorm entertainment','3h 12min','15 de dezembro de 2022','Após formar uma família, Jake Sully e Neytiri fazem de tudo para ficarem juntos. No entanto, eles devem sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve travar uma guerra difícil contra os humanos.','img/sidebar/ava.jpg','img/hero/avatarwide.jpg');
+insert into filmes values (null,null,null,'GATO DE BOTAS 2: O ÚLTIMO PEDIDO','Animação','10','Antonio Banderas, Salma Hayek, Harvey Guillen','Joel Crawford','DreamWorks Animation','1h 42min','5 de janeiro de 2023','O Gato de Botas descobre que sua paixão pela aventura cobrou seu preço: ele já gastou oito de suas nove vidas. Ele então parte em uma jornada épica para encontrar o mítico Último Desejo e restaurar suas nove vidas.','img/sidebar/gato-de-botas-2-o-ultimo-pedido.jpg','img/hero/gatowide.jpg');
+insert into filmes values (null,null,null,'Homem-Formiga e a Vespa: Quantumania','Ação','6 ','Paul Rudd, Evangeline Lilly, Michael Douglas','Peyton Reed','Marvel Studios','2h 01min','16 de fevereiro de 2023','Scott Lang lida com as consequências de suas escolhas tanto como super-herói quanto como pai. Enquanto tenta reequilibrar sua vida com suas responsabilidades como o Homem-Formiga, ele é confrontado por Hope van Dyne e Dr. Hank Pym com uma nova missão urgente. Scott deve mais uma vez vestir o uniforme e aprender a lutar ao lado da Vespa, trabalhando em conjunto para descobrir segredos do passado.','img/sidebar/hf.jpg','img/hero/hfwide.jpg');

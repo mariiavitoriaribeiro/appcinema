@@ -71,42 +71,20 @@
     <section class="hero">
         <div class="container">
             <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="img/hero/hfwide.jpg">
+            @foreach($dadosfilme as $dadofilme)
+                <div class="hero__items set-bg" data-setbg="{{$dadofilme->capahero}}">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <div class="label">Ação</div>
-                                <h2>Homem Formiga & Vespa Quantumania</h2>
-                                <p>O Homem-Formiga e a Vespa lutam contra Kang, o Conquistador, no reino quântico.</p>
-                                <a href="homemformiga-details.html"><span>Assista agora</span> <i class="fa fa-angle-right"></i></a>
+                                <div class="label">{{$dadofilme->generofilme}}</div>
+                                <h2>{{$dadofilme->nomefilme}}</h2>
+                                <p>{{$dadofilme->sinopsefilme}}</p>
+                                <a href="link a definir"><span>Assista agora</span> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="hero__items set-bg" data-setbg="img/hero/avatarwide.jpg">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Ficção cientifica</div>
-                                <h2>Avatar: O Caminho da Água</h2>
-                                <p>Após formar uma família, Jake Sully e Ney'tiri fazem de tudo para ficarem juntos. No entanto, eles devem sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve travar uma guerra difícil contra os humanos.</p>
-                                <a href="avatar-details.html"><span>Assista agora</span> <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__items set-bg" data-setbg="img/hero/gatowide.jpg">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Animação</div>
-                                <h2>Gato de botas 2 o ultimo pedido</h2>
-                                <p>O Gato de Botas descobre que sua paixão pela aventura cobrou seu preço: ele já gastou oito de suas nove vidas.</p>
-                                <a href="gato-details.html"><span>Assista agora</span> <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            @endforeach
             </div>
         </div>
     </section>
@@ -135,10 +113,13 @@
                         @else
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="{{ asset('storage/app/public/$dadofilme->capa') }}">
+                                    <div class="product__item__pic set-bg" data-setbg="{{$dadofilme->capa}}"> 
+                                    <div class="ep">{{$dadofilme->notafilme}} / 10</div>
                                     </div>
                                     <div class="product__item__text">
-
+                                        <ul>
+                                            <li>{{$dadofilme->generofilme}}</li>
+                                        </ul>
                                         <h5><a href="avatar-details.html">{{$dadofilme->nomefilme}}</a></h5>
                                     </div>
                                 </div>
@@ -146,9 +127,7 @@
                         @endif
                         @endforeach
                         </div>
-                    </div>
-                    
-                   
+                    </div>                  
 
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-8">
@@ -158,31 +137,16 @@
                                 <h5>Mais vistos</h5>
                             </div>
                             <ul class="filter__controls">
-                                <li class="active" data-filter="*">Dia</li>
-                                <li data-filter=".week">Semana</li>
-                                <li data-filter=".month">Mês</li>
-                                <li data-filter=".years">Ano</li>
                             </ul>
+                            @foreach($dadosfilme as $dadofilme)
                             <div class="filter__gallery">
                                 <div class="product__sidebar__view__item set-bg mix day years"
-                                data-setbg="img/sidebar/ava.jpg">
-                                <div class="ep">7 / 10</div>
-                                <h5><a href="avatar-details.html">Avatar: O Caminho da Água</a></h5>
+                                data-setbg="{{$dadofilme->capa}}">
+                                <div class="ep">{{$dadofilme->notafilme}} / 10</div>
+                                <h5><a href="avatar-details.html">{{$dadofilme->nomefilme}}</a></h5>
                             </div>
-                            <div class="product__sidebar__view__item set-bg mix month week"
-                            data-setbg="img/sidebar/hf.jpg">
-                            <div class="ep">6 / 10</div>
-                            <h5><a href="homemformiga-details.html">Homem Formiga & Vespa Quantumania</a></h5>
-                        </div>
-                        <div class="product__sidebar__view__item set-bg mix week years"
-                        data-setbg="img/sidebar/gato-de-botas-2-o-ultimo-pedido.jpg">
-                        <div class="ep">10 / 10</div>
-                        <h5><a href="gato-details.html">Gato de botas 2 o ultimo pedido</a></h5>
-                    </div>
-                    <div class="product__sidebar__view__item set-bg mix years month"
-                    data-setbg="img/sidebar/13.jpg">
-                    <div class="ep">7 / 10</div>
-                    <h5><a href="13-details.html">13 Exorcismos</a></h5>
+                            @endforeach
+                            
                 </div>
             </div>
         </div>

@@ -72,7 +72,7 @@ class filmeController extends Controller
             'dtlancamentofilme' => 'string|required',
             'sinopsefilme' => 'string|required',
             'capa' => 'file|required',
-
+            /*falta coisas da migration*/
         ]);        
 
         $registrosFilme->fill($dadosfilme); 
